@@ -1,9 +1,9 @@
 ### Build podman image
 ```sh
-podman build . --tag otp-verification
+podman build . --tag stress_analyzer
 ```
 
 ### Run image
 ```sh
-podman run --rm -p 8000:8000 otp-verification
+podman run --env-file .env --rm -p 8000:8000 stress_analyzer
 ```

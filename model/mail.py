@@ -6,7 +6,9 @@ import dotenv
 
 from model.otp import Otp
 
-dotenv.load_dotenv(".env")
+if os.path.exists(".env"):
+    dotenv.load_dotenv(".env")
+
 USERNAME = str(os.getenv("EMAIL_ADDRESS"))
 PASSWORD = str(os.getenv("EMAIL_PASSWORD"))
 
