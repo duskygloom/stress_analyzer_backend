@@ -42,7 +42,7 @@ def validate(email: str, code: str) -> dict[ValidateKeys, str]:
 def request(email: str, length: int = 6) -> dict[RequestKeys, str]:
     otp = Mail.send_otp(email, length)
     # otp = Otp.generate(length)
-    # print(f"OTP is {otp}.")
+    print(f"OTP is {otp}.")
     if otp == "":
         return {"status": "failed"}
     timeout = Otp.store(otp, email)
